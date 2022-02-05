@@ -19,23 +19,22 @@ class MyDrawer extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: Colors.red,
                   ),
-                  margin: EdgeInsets.zero,
-                  accountName: Text("Jil Patel",
-                  textScaleFactor: 1.3,
-                  style: TextStyle(
-                      fontSize: 15,
-                      ),
-                    ), 
-                  accountEmail: Text("jilpatel0511@gmail.com",
-                  textScaleFactor: 1.3,
-                  style: TextStyle(
+                    margin: EdgeInsets.zero,
+                    accountName: Text("Jil Patel",
+                    textScaleFactor: 1.3,
+                    style: TextStyle(
                         fontSize: 15,
                         ),
-                      ),
-                      
-                  currentAccountPicture: CircleAvatar(
-                    //backgroundImage: NetworkImage(ImageUrl),
-                    ),
+                      ), 
+                      accountEmail: Text("jilpatel0511@gmail.com",
+                      textScaleFactor: 1.3,
+                      style: TextStyle(
+                            fontSize: 15,
+                            ),
+                          ),  
+                        currentAccountPicture: CircleAvatar(
+                        //backgroundImage: NetworkImage(ImageUrl),
+                        ),
                 ),
               ),
               ListTile(
