@@ -2,14 +2,14 @@ import 'package:first_app/utls/routes.dart';
 import 'package:flutter/material.dart';
 
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class DemoPage extends StatefulWidget {
+  const DemoPage({Key? key}) : super(key: key);
 
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _DemoPageState createState() => _DemoPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _DemoPageState extends State<DemoPage> {
   String name = "";
   bool changeButton = false;
 
@@ -48,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
                 height: 30,
               ),
               Text(
-                "Welcome $name",
+                "Welcome DEMO $name",
                 style: const TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
@@ -84,13 +84,13 @@ class _LoginPageState extends State<LoginPage> {
                         hintText: "Enter password",
                         labelText: "Password",
                       ),
-                      validator: (value) {
-                        print(value);
+                      validator: (_value) {
+                        print(_value);
 
-                        if (value!.isEmpty) {
+                        if (_value!.isEmpty) {
                           return "Password is not written";
                         }
-                        else if(value.length < 6) {
+                        elif(_value) {
                           return "Password length is small";
                         }
 

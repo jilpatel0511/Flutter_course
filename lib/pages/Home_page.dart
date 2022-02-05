@@ -10,19 +10,19 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:const Text("Cataloge App"),
+        title: Text("Cataloge App"),
       ),
       body: Center(
         child: Container(
           child: Text(
             "Welcome to $days days of flutter by $name",
-            style: const TextStyle(
+            style:  TextStyle(
               color: Colors.blueAccent,
             ),
           ),
         ),
       ),
-      drawer: const Drawer(),
+      drawer: Drawer(),
     );
   }
 }
