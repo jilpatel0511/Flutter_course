@@ -12,7 +12,9 @@ class homeDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyTheme.creamColor,
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       bottomNavigationBar: ButtonBar(
         alignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -23,7 +25,7 @@ class homeDetailPage extends StatelessWidget {
                       backgroundColor:
                           MaterialStateProperty.all(MyTheme.darkBluishColor),
                       shape: MaterialStateProperty.all(StadiumBorder())),
-                  child: "Buy".text.make(),).wh(100, 30)
+                  child: "Add to cart".text.make(),).wh(120, 30)
               .pOnly(right: 10)
         ],
       ).p32(),
