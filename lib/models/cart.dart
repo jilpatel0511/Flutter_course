@@ -30,6 +30,6 @@ void add(Item item){
 
   //Remove Items
 void remove(Item item){
-  _itemIds.add(item.id);
+  _itemIds.remove(item.id);
 }
 }

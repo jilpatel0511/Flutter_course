@@ -36,10 +36,16 @@ class _cartTotal extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          "\$${_cart.totalPrice}".text.xl4.color(MyTheme.darkBluishColor).make(),
+          "\$${_cart.totalPrice}"
+              .text
+              .xl4
+              .color(MyTheme.darkBluishColor)
+              .make(),
           ElevatedButton(
             onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content:Text("Buying not supported yet"),));
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: Text("Buying not supported yet"),
+              ));
             },
             child: Text('Buy'),
             style: ButtonStyle(
@@ -63,16 +69,23 @@ class __cartListState extends State<_cartList> {
   final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: _cart.items?.length,
-      itemBuilder: (context, index) => ListTile(
-        leading: Icon(Icons.done),
-        trailing: IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.remove_circle),
-        ),
-        title: Text(_cart.items![index].name),
-      ),
-    );
+    return _cart.items!.isEmpty
+        ? Center(child: Text("Nothing To Show"))
+        : ListView.builder(
+            itemCount: _cart.items?.length,
+            itemBuilder: (context, index) => ListTile(
+              leading: Icon(Icons.done),
+              trailing: IconButton(
+                icon: Icon(Icons.remove_circle),
+                onPressed: () {
+                  _cart.remove(_cart.items![index]);
+                  setState(
+                    () {},
+                  );
+                },
+              ),
+              title: Text(_cart.items![index].name),
+            ),
+          );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:first_app/models/catalog.dart';
+import 'package:first_app/widgets/Home_widgets/add_to_cart.dart';
 import 'package:first_app/widgets/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -19,7 +20,7 @@ class homeDetailPage extends StatelessWidget {
         alignment: MainAxisAlignment.spaceBetween,
         children: [
           "\$${catalog.price}".text.lg.bold.xl.red600.make(),
-          _AddToCart().wh(120, 30)
+          AddToCart(catalog:catalog).wh(120, 30)
               .pOnly(right: 10)
         ],
       ).p32(),
@@ -55,24 +56,3 @@ class homeDetailPage extends StatelessWidget {
   }
 }
 
-class _AddToCart extends StatefulWidget {
-  const _AddToCart({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  State<_AddToCart> createState() => _AddToCartState();
-}
-
-class _AddToCartState extends State<_AddToCart> {
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-            onPressed: () {},
-            style: ButtonStyle(
-                backgroundColor:
-                    MaterialStateProperty.all(MyTheme.darkBluishColor),
-                shape: MaterialStateProperty.all(StadiumBorder())),
-            child: "Add to cart".text.make(),);
-  }
-}
