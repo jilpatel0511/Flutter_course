@@ -1,3 +1,4 @@
+import 'package:first_app/core/store.dart';
 import 'package:first_app/models/cart.dart';
 import 'package:first_app/widgets/themes.dart';
 import 'package:flutter/material.dart';
@@ -30,13 +31,13 @@ class _cartTotal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _cart = CartModel();
+    final CartModel? _cart = (VxState.store as MyStore).cart;
     return SizedBox(
       height: 200,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          "\$${_cart.totalPrice}"
+          "\$${_cart!.totalPrice}"
               .text
               .xl4
               .color(MyTheme.darkBluishColor)
@@ -62,10 +63,11 @@ class _cartList extends StatelessWidget {
   
 
 
-  final _cart = CartModel();
+  
   @override
   Widget build(BuildContext context) {
-    return _cart.items!.isEmpty
+    final CartModel? _cart = (VxState.store as MyStore).cart;
+    return _cart!.items!.isEmpty
         ? Center(child: Text("Nothing To Show"))
         : ListView.builder(
             itemCount: _cart.items?.length,
